@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        padding: 1%;
+        background-color:azure;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 13px;
+      }
+
+      #loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+      label,
+      legend {
+        display: block;
+        font-size: 14px;
+        font-weight: 200;
+        margin-bottom: 10px;
+      }
+      input,
+      textarea {
+        background-color:white;
+        border: 1px solid black;
+        border-radius: 3px;
+        box-shadow: none;
+        box-sizing: inherit;
+        padding: 5px;
+        width: 85%;
+        height: 150px;
+        margin-bottom: 5%;
+      }
+ 
+      .responseDiv {
+        background-color:ivory;
+        height:auto;
+        width: 90%;
+        text-align: center;
+        overflow-wrap: break-word;
+        font-family: Verdana;
+}
+
+      button {
+        display: block;
+        font-size: 14px;
+      }
+
+     table {
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  padding: 2px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 6px;
+  word-wrap: break-word;
+  max-width: 35px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+tr:hover {background-color: lightslategrey;}
+
+    </style>
+    <title>SemanticCyclone Document Sentiment, Summarizer and Similarity AI</title>
+  </head>
+  <body>
+    <h2>SemanticCyclone Document Sentiment, Summarizer and Similarity AI</h2>
+    <p>This Prototype Web App will Generate a Similarity Quotent of the two text documents submitted in the boxes below (english text is the only supported language for this prototype)
+    <div class="responseDiv" id="response"></div>
+    <form id="my-form">
+
+      <label for="msg1">Text 1:
+        <textarea id="message1" name="message1">
+          Flu season is here — and early red flags suggest it's on track to be very, very bad. The latest data from the Centers for Disease Control and Prevention's (CDC's) Flu View report show extraordinarily high numbers of positive flu tests reported to the agency from labs around the US. As of November 5, nearly 14,000 positive flu tests had been reported, as shown in the orange line on the below chart. That's more than 12 times the number reported at the same time in 2019 (shown in the black line).
+
+          This year's early and meteoric rise in flu transmission is at least somewhat related to the fact that more people are being tested for the flu than during previous years. Over the past five weeks, nearly twice as many flu tests were done at clinical labs nationwide as during the same period last year (about 460,000 versus 254,000). More testing means more cases will get picked up.
+          
+          But there are other signs that these numbers represent real and very scary trends.
+          
+          For starters, a much higher proportion of flu tests are turning up positive than in previous years: During past bad flu seasons, test positivity has topped out around 3.6 percent, but last week, nearly 13 percent of flu tests were positive. When a higher proportion of tests are positive, that means more people who are feeling sick actually have the flu than in past years.
+          
+          Concerning signals are also coming from doctors' offices and hospitals. At this time of year, only 1 to 2 percent of patients in outpatient clinics generally report flu-like illnesses. But right now, that number is up to 5 and a half percent, according to CDC. Not all of those patients actually have the flu — many might have RSV or other infections — but in combination with the flu testing numbers, it's worrisome.
+          
+          Additionally, more than five times as many people have been hospitalized for the flu so far this season than at the same point in any of the last 10 years. And unlike RSV, which poses the biggest threat to the youngest and oldest, the severe disease flu causes is more evenly spread across age groups. About one-third of the people who've been hospitalized for flu this year were 65 or older, while another quarter were ages 18 to 49.
+          
+          These are especially worrisome signs given the health care workforce strain we've already seen during the ongoing RSV surge. And this early start doesn't suggest this flu wave will be a flash in the pan. The flu is currently worst in the southeastern US, but that will almost certainly change as the air gets colder and the virus migrates northward. Plus, cases haven't peaked this early since 2009-10's no good, very bad H1N1 flu pandemic.
+          
+          The good news: There's a lot you can do to protect yourself from the flu. This year's flu vaccine is widely available and free with most insurance plans. And because both of the dominant flu strains currently circulating were included in this year's vaccine formulation, there's hope the shot will help prevent severe illness in people who get it.
+          
+          There's also medicine to treat the flu, so if you're sick and at risk for flu complications, seek medical care early.
+          
+          And all that masking, ventilating, and air-filtering we learned to do during the pandemic does a lot to prevent flu transmission (not to mention all the other respiratory nasties out there).
+          
+          Flu transmission actually dropped dramatically during the pandemic. In the chart above, look at the blue lines, which represent cases reported over the last two years. You can see that there were very few positive tests in 2020, when mitigation measures — like widespread masking — were still in place and most kids weren't in school buildings. Transmission picked up in 2021, but was on track with prior seasons — and was probably curbed beginning late in the year due to increased masking and social distancing in response to the omicron surge of Covid-19.
+          
+          This year's start to the flu season is scary. But we can still take steps to flatten this curve. </textarea>
+      </label>
+
+      <label for="msg2">Text 2:
+      <textarea id="message2" name="message2">
+        The 2022 flu season is off to an early and vicious start, especially in the South, according to tracking by the Centers for Disease Control and Prevention.
+
+        The CDC has seven states, plus Washington, D.C., in the highest category for flu activity, shown in purple on the map below. Alabama, Georgia, Mississippi, North Carolina, Tennessee, South Carolina and Virginia are all categorized as "very high."
+        
+        It's not much better in Maryland and Texas, both of which are in the second-worst category (brown on the CDC map).
+        
+        Behind them are five more states in auburn: Arkansas, Kentucky, Louisiana, New Jersey and New Mexico.
+        
+        CDC tracking shows where flu levels are highest in the country. (Map: CDC)
+        Hospitalization rates for influenza haven't been this high this early since the 2009 swine flu pandemic, according to the CDC. So far, there have been an estimated 1,300 flu deaths, including at least three children.
+        
+        Activity has spiked over the past month. Less than three weeks ago, no states were in the "very high" categories.
+        
+        All this flu transmission is also happening earlier than usual - the winter flu season usually ramps up in December or January.
+        
+        Things look better up north; the Pacific Northwest, Upper Midwest and New England all have states in the "minimal" category for flu activity.
+        
+        The CDC map isn't based on confirmed influenza lab tests but rather tracks where people are going to the doctor with flu-like symptoms (respiratory illness and fever, plus a cough or sore throat). Because of that, the map "may capture patient visits due to other respiratory pathogens that cause similar symptoms," the agency explains.
+        
+        Flu season is ramping up at the same time as children's hospitals are reeling from an onslaught of young patients with Respiratory Syncytial Virus, or RSV. CDC tracking shows RSV cases spiking since September.
+        
+        There may be some good news: COVID-19 cases have been trending downwards and leveled off in the last three weeks, the CDC's Dr. Jose Romero said. </textarea>
+    </label>
+
+      <button>Submit</button>
+    </form>
+
+    <script src="index.js"></script>
+  </body>
+</html>
